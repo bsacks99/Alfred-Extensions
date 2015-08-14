@@ -217,12 +217,7 @@ else
                         echo "<item uid=\"$UUID\" arg=\"startvm $UUID\" autocomplete=\"$NAME\">"
                         echo "<title>$NAME</title>"
                         echo "<subtitle>Start Virtual Machine</subtitle>"
-                        echo "<icon>$ICON.png</icon>"
-                        echo "</item>"
-
-                        echo "<item uid=\"headleass-$UUID\" arg=\"startvm $UUID --type headless\" autocomplete=\"$NAME\">"
-                        echo "<title>$NAME</title>"
-                        echo "<subtitle>Start Virtual Machine (Headless)</subtitle>"
+                        echo "<subtitle mod=\"cmd\">Start Virtual Machine (Headless)</subtitle>"
                         echo "<icon>$ICON.png</icon>"
                         echo "</item>"
 
