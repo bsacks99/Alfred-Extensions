@@ -4,6 +4,8 @@
 <dict>
 	<key>bundleid</key>
 	<string>dk.aiyo.VirtualBoxControl</string>
+	<key>category</key>
+	<string>Tools</string>
 	<key>connections</key>
 	<dict>
 		<key>86FD7F90-FA0B-4C1C-B13B-346309B0E5D3</key>
@@ -16,10 +18,18 @@
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B7F3B3A2-E26A-40AB-BB9F-A72E641D6DD1</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string>Jonas Eriksen</string>
+	<string>Jonas Eriksen (hacked by Brad Sacks)</string>
 	<key>description</key>
 	<string>Control Your VirtualBox VMs From Alfred.app</string>
 	<key>disabled</key>
@@ -31,6 +41,8 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
 				<key>escaping</key>
 				<integer>62</integer>
 				<key>script</key>
@@ -42,6 +54,8 @@
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>301581C1-995D-4A74-90CD-8B3D929EBF23</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -52,6 +66,14 @@
 				<integer>62</integer>
 				<key>keyword</key>
 				<string>vm</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
 				<key>runningsubtext</key>
 				<string>Searching for Virtual Machines...</string>
 				<key>script</key>
@@ -69,6 +91,27 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>86FD7F90-FA0B-4C1C-B13B-346309B0E5D3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string>VBoxManage {query}  --type headless</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B7F3B3A2-E26A-40AB-BB9F-A72E641D6DD1</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -93,6 +136,11 @@ Surported commands are:
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
+		</dict>
+		<key>B7F3B3A2-E26A-40AB-BB9F-A72E641D6DD1</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
