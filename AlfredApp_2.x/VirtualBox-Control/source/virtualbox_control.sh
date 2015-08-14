@@ -217,6 +217,14 @@ else
                         echo "<item uid=\"$UUID\" arg=\"startvm $UUID\" autocomplete=\"$NAME\">"
                         echo "<title>$NAME</title>"
                         echo "<subtitle>Start Virtual Machine</subtitle>"
+                        echo "<icon>$ICON.png</icon>"
+                        echo "</item>"
+
+                        echo "<item uid=\"headleass-$UUID\" arg=\"startvm $UUID --type headless\" autocomplete=\"$NAME\">"
+                        echo "<title>$NAME</title>"
+                        echo "<subtitle>Start Virtual Machine (Headless)</subtitle>"
+                        echo "<icon>$ICON.png</icon>"
+                        echo "</item>"
 
                     elif [[ $(echo $LINE | grep -c "aborted") -gt 0 ]]
                         then
@@ -224,30 +232,33 @@ else
                         echo "<item uid=\"$UUID\" arg=\"startvm $UUID\" autocomplete=\"$NAME\">"
                         echo "<title>$NAME (Aborted)</title>"
                         echo "<subtitle>Start Virtual Machine</subtitle>"
-
+                        echo "<icon>$ICON.png</icon>"
+                        echo "</item>"
                     elif [[ $(echo $LINE | grep -c "paused") -gt 0 ]]
                         then
                         # VM is paused, make a resume link
                         echo "<item uid=\"$UUID\" arg=\"controlvm $UUID resume\" autocomplete=\"$NAME\">"
                         echo "<title>$NAME (Paused)</title>"
                         echo "<subtitle>Resume Virtual Machine</subtitle>"
-
+                        echo "<icon>$ICON.png</icon>"
+                        echo "</item>"
                     elif [[ $(echo $LINE | grep -c "saved") -gt 0 ]]
                         then
                         # VM is in a saved state, link to list of options
                         echo "<item uid=\"$UUID\" autocomplete=\"$NAME > \" valid=\"no\">"
                         echo "<title>$NAME (Saved State)</title>"
                         echo "<subtitle>Start or Discard Saved State of Virtual Machine</subtitle>"
-
+                        echo "<icon>$ICON.png</icon>"
+                        echo "</item>"
                     else
                         # VM is running, link to list of options
                         echo "<item uid=\"$UUID\" autocomplete=\"$NAME > \" valid=\"no\">"
                         echo "<title>$NAME (Running)</title>"
                         echo "<subtitle>Pause, Save State, Power Off or Reset Virtual Machine</subtitle>"
+                        echo "<icon>$ICON.png</icon>"
+                        echo "</item>"
                     fi
 
-                    echo "<icon>$ICON.png</icon>"
-                    echo "</item>"
                 fi
             fi
             ;;
